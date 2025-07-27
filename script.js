@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bg-audio');
+  function tryPlay() {
+    if (!audio) return;
+    audio.muted = false;
+    audio.volume = 0.3;
+    audio.play().catch(() => {});
+  }
+
   setTimeout(() => {
-    if (audio) {
-      audio.muted = false;
-      audio.volume = 0.3;
-      audio.play().catch(() => {});
+    tryPlay();
+    if (audio && audio.paused) {
+      document.addEventListener('click', tryPlay, { once: true });
+      document.addEventListener('touchstart', tryPlay, { once: true });
     }
   }, 500);
 
