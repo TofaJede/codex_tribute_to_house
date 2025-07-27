@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'TOPOL BOLD';
+  src: url('src/font/topol-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --purple: #6433a2;
   --neon-purple: #7841c7;
