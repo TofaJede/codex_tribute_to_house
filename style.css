@@ -302,6 +302,9 @@ footer {
     width: 30px;
     height: 30px;
   }
+  #audio-player .custom-player {
+    width: 100%;
+  }
 }
 
 /* custom music player */
@@ -402,5 +405,13 @@ footer {
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
   }
 }

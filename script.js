@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playBtn = document.getElementById('play-btn');
     const progressFilled = document.getElementById('progress-filled');
 
+    // attempt autoplay on load
     tryPlay();
     requestAnimationFrame(detectBeat);
 
@@ -69,11 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (audio.paused) {
       const startPlayback = () => {
         tryPlay();
-        document.removeEventListener('click', startPlayback);
-        document.removeEventListener('touchstart', startPlayback);
+        document.removeEventListener('pointerdown', startPlayback);
       };
-      document.addEventListener('click', startPlayback);
-      document.addEventListener('touchstart', startPlayback);
+      document.addEventListener('pointerdown', startPlayback, { once: true });
     }
   }
 
