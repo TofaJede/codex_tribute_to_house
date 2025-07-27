@@ -273,6 +273,11 @@ footer {
   animation: bounce 1s infinite ease-in-out;
 }
 
+#hero .visualizer .bar.on-beat {
+  transform: scaleY(1.2);
+  background: var(--neon-purple);
+}
+
 #hero .visualizer .bar:nth-child(odd) {
   animation-delay: 0.5s;
 }
