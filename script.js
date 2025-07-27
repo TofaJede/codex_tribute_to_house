@@ -1,7 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bg-audio');
+  const volumeControl = document.getElementById('volume-control');
   if (audio) {
-    audio.volume = 0.3;
+    if (volumeControl) {
+      audio.volume = parseFloat(volumeControl.value);
+      volumeControl.addEventListener('input', () => {
+        audio.volume = parseFloat(volumeControl.value);
+      });
+    } else {
+      audio.volume = 0.3;
+    }
+    if (volumeControl) {
+      volumeControl.value = audio.volume;
+    }
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     const audioCtx = new AudioCtx();
     const source = audioCtx.createMediaElementSource(audio);
@@ -59,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       audio.addEventListener('play', updateVinyl);
       audio.addEventListener('pause', updateVinyl);
+      vinyl.addEventListener('click', () => {
+        if (audio.paused) {
+          tryPlay();
+        } else {
+          audio.pause();
+        }
+      });
       updateVinyl();
     }
 
