@@ -75,8 +75,11 @@ header#hero::after {
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .hero-content h1 {
@@ -321,7 +324,7 @@ footer {
   background: rgba(0, 0, 0, 0.3);
   padding: 1rem;
   border-radius: 8px;
-  width: 220px;
+  width: min(80vmin, 400px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,8 +332,9 @@ footer {
 }
 
 #audio-player .vinyl {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  opacity: 0.3;
   border-radius: 50%;
   background: radial-gradient(circle, #333 0%, #000 80%);
   position: relative;
@@ -410,10 +414,9 @@ footer {
 /* DJ train on hero */
 #hero .dj-train {
   position: absolute;
-  top: 0; /* previously bottom: 0 */
+  bottom: 0;
   left: 0;
   right: 0;
-  margin-top: 70px; /* offset for sticky navbar */
   padding: 10px 0;
   background: rgba(0, 0, 0, 0.3);
 }
