@@ -302,7 +302,7 @@ footer {
     width: 30px;
     height: 30px;
   }
-  #audio-player .custom-player {
+  #audio-player .vinyl-player {
     width: 100%;
   }
 }
@@ -317,27 +317,77 @@ footer {
   z-index: 1;
 }
 
-#audio-player .custom-player {
+#audio-player .vinyl-player {
   background: rgba(0, 0, 0, 0.3);
   padding: 1rem;
   border-radius: 8px;
-  width: 300px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#audio-player .vinyl {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #333 0%, #000 80%);
+  position: relative;
+  overflow: hidden;
+  animation: spin 4s linear infinite;
+  animation-play-state: paused;
+}
+
+#audio-player .vinyl::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle at center, #222 0, #222 2px, transparent 2px, transparent 4px);
+  opacity: 0.4;
+}
+
+#audio-player .vinyl img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+}
+
+#audio-player .vinyl.spinning {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 #audio-player button {
-  width: 100%;
-  padding: 0.5rem;
-  background: var(--orange);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
   color: var(--purple);
   border: none;
-  border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 #audio-player button.playing {
-  background: var(--neon-purple);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 #audio-player .progress {

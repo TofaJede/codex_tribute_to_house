@@ -27,12 +27,15 @@
       <div class="bar"></div>
     </div>
     <div id="audio-player">
-      <div class="custom-player">
-        <button id="play-btn" aria-label="Play"></button>
+      <div class="vinyl-player">
+        <div class="vinyl" id="vinyl">
+          <img src="src/media/logo_white.png" alt="Tribute to House">
+        </div>
+        <button id="play-btn" aria-label="Play">&#9654;</button>
         <div class="progress" id="progress">
           <div class="progress-filled" id="progress-filled"></div>
         </div>
-        <audio id="bg-audio" src="src/player/track.wav" loop muted playsinline preload="metadata"></audio>
+        <audio id="bg-audio" src="src/player/track.wav" loop playsinline preload="metadata"></audio>
       </div>
     </div>
     <div class="hero-content">
