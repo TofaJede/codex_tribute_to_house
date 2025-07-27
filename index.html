@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tribute to House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bg-audio" src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_d962f5f7e6.mp3?filename=chill-112198.mp3" autoplay loop></audio>
+
+  <nav id="navbar">
+    <div class="logo">Tribute to House</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#next-event">Events</a></li>
+      <li><a href="#djs">DJs</a></li>
+      <li><a href="#contact">Send Set</a></li>
+    </ul>
+  </nav>
+
+  <header id="hero">
+    <div class="hero-content">
+      <h1>Tribute to House</h1>
+      <p class="subtitle">A movement of rhythm and unity</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn">Send us your set</a>
+        <a href="#next-event" class="btn alt">Buy Tickets</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About the Label</h2>
+    <p>Tribute to House is more than a label&mdash;it's a cultural movement. Our community of DJs spans the globe, united by the groove. We host unforgettable events celebrating the sound of house music worldwide.</p>
+  </section>
+
+  <section id="next-event" class="highlight">
+    <div class="event-info">
+      <h2>Next Event</h2>
+      <p class="date">June 30, 2024</p>
+      <h3 class="event-name">Sunset Beats Festival</h3>
+      <p class="location">Ibiza, Spain</p>
+      <p class="description">Join us on the beach for an evening of soulful house and dancing till dawn.</p>
+      <a href="#" class="btn alt">Buy Tickets</a>
+    </div>
+  </section>
+
+  <section id="upcoming">
+    <h2>Other Upcoming Events</h2>
+    <div class="event-cards">
+      <div class="card">
+        <p class="date">July 14</p>
+        <p class="name">Midnight Groove</p>
+        <p class="location">Berlin, Germany</p>
+      </div>
+      <div class="card">
+        <p class="date">August 21</p>
+        <p class="name">City Lights Party</p>
+        <p class="location">New York, USA</p>
+      </div>
+      <div class="card">
+        <p class="date">September 10</p>
+        <p class="name">Warehouse Reunion</p>
+        <p class="location">Chicago, USA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="djs">
+    <h2>Featured Collabs / DJs</h2>
+    <div class="dj-grid">
+      <div class="dj-card">
+        <img src="https://via.placeholder.com/200x200" alt="DJ A">
+        <p>DJ A</p>
+      </div>
+      <div class="dj-card">
+        <img src="https://via.placeholder.com/200x200" alt="DJ B">
+        <p>DJ B</p>
+      </div>
+      <div class="dj-card">
+        <img src="https://via.placeholder.com/200x200" alt="DJ C">
+        <p>DJ C</p>
+      </div>
+      <div class="dj-card">
+        <img src="https://via.placeholder.com/200x200" alt="DJ D">
+        <p>DJ D</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Send Us Your Set</h2>
+    <form id="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Message
+        <textarea name="message" required></textarea>
+      </label>
+      <label>
+        Upload your mix
+        <input type="file" name="file">
+      </label>
+      <button type="submit" class="btn">Submit</button>
+      <p id="form-message" class="hidden">Thank you! We'll be in touch.</p>
+    </form>
+  </section>
+
+  <footer>
+    <div class="social">
+      <a href="#">Instagram</a>
+      <a href="#">SoundCloud</a>
+    </div>
+    <a href="#hero" class="to-top">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
