@@ -320,7 +320,7 @@ footer {
 }
 
 #audio-player .vinyl {
-  width: 200px;
+  width: 25%;
   aspect-ratio: 1 / 1;
   opacity: var(--vinyl-opacity);
   border-radius: 50%;
@@ -329,6 +329,7 @@ footer {
   overflow: hidden;
   animation: spin 4s linear infinite;
   animation-play-state: paused;
+  cursor: pointer;
 }
 
 #audio-player .vinyl::before {
@@ -361,24 +362,9 @@ footer {
 
 #volume-control {
   opacity: 0.7;
-  width: 100px;
+  width: 150px;
+  writing-mode: horizontal-tb;
 }
-
-#play-btn {
-  background: var(--orange);
-  color: var(--purple);
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-#play-btn.hidden {
-  display: none;
-}
-
 
 #audio-player audio {
   display: none;
