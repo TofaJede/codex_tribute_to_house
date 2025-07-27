@@ -318,10 +318,10 @@ footer {
 /* DJ train on hero */
 #hero .dj-train {
   position: absolute;
-  top: 0;
+  top: 0; /* previously bottom: 0 */
   left: 0;
   right: 0;
-  margin-top: 60px;
+  margin-top: 70px; /* offset for sticky navbar */
   padding: 10px 0;
   background: rgba(0, 0, 0, 0.3);
 }
