@@ -290,18 +290,39 @@ footer {
   nav ul {
     gap: 10px;
   }
+  #audio-player audio {
+    width: 90%;
+  }
+  .dj-item {
+    margin-right: 20px;
+  }
+  .dj-item img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* floating music player */
 #audio-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1001;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 #audio-player audio {
-  width: 200px;
+  width: 350px;
+}
+
+/* DJ train on hero */
+#hero .dj-train {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* DJ name train */
@@ -314,7 +335,20 @@ footer {
 .dj-train .track {
   display: inline-block;
   padding-left: 100%;
-  animation: dj-train-move 15s linear infinite;
+  animation: dj-train-move 30s linear infinite;
+}
+
+.dj-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.dj-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
 }
 
 @keyframes dj-train-move {

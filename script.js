@@ -1,19 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bg-audio');
-  function tryPlay() {
-    if (!audio) return;
-    audio.muted = false;
+  if (audio) {
     audio.volume = 0.3;
-    audio.play().catch(() => {});
-  }
+    const tryPlay = () => {
+      audio.muted = false;
+      audio.play().catch(() => {});
+    };
 
-  setTimeout(() => {
     tryPlay();
-    if (audio && audio.paused) {
-      document.addEventListener('click', tryPlay, { once: true });
-      document.addEventListener('touchstart', tryPlay, { once: true });
+
+    if (audio.paused) {
+      const startPlayback = () => {
+        tryPlay();
+        document.removeEventListener('click', startPlayback);
+        document.removeEventListener('touchstart', startPlayback);
+      };
+      document.addEventListener('click', startPlayback);
+      document.addEventListener('touchstart', startPlayback);
     }
-  }, 500);
+  }
 
   const form = document.getElementById('contact-form');
   if (form) {
