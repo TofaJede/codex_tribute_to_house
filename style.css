@@ -334,7 +334,7 @@ footer {
 #audio-player .vinyl {
   width: 100%;
   aspect-ratio: 1 / 1;
-  opacity: 0.3;
+  opacity: 0.4;
   border-radius: 50%;
   background: radial-gradient(circle, #333 0%, #000 80%);
   position: relative;
