@@ -6,14 +6,13 @@
   <title>Tribute to House</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/topol" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio id="bg-audio" src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_d962f5f7e6.mp3?filename=chill-112198.mp3" autoplay loop></audio>
-
   <nav id="navbar">
-    <div class="logo">Tribute to House</div>
+    <img class="logo" src="src/media/logo_white.png" alt="Tribute to House">
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -24,6 +23,14 @@
   </nav>
 
   <header id="hero">
+    <div class="visualizer" aria-hidden="true">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <audio id="bg-audio" src="src/player/track.wav" autoplay loop></audio>
+    </div>
     <div class="hero-content">
       <h1>Tribute to House</h1>
       <p class="subtitle">A movement of rhythm and unity</p>

@@ -1,7 +1,7 @@
 :root {
-  --purple: #2d004d;
-  --neon-purple: #a600ff;
-  --orange: #ff8c42;
+  --purple: #6433a2;
+  --neon-purple: #7841c7;
+  --orange: #eaa477;
   --text: #ffffff;
 }
 
@@ -11,7 +11,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'TOPOL BOLD', sans-serif;
   background: var(--purple);
   color: var(--text);
 }
@@ -28,9 +28,7 @@ nav {
 }
 
 nav .logo {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  color: var(--orange);
+  height: 40px;
 }
 
 nav ul {
@@ -57,7 +55,7 @@ header#hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('https://via.placeholder.com/1600x900') center/cover no-repeat;
+  background: url('src/media/logo-paper-background.png') center/cover no-repeat;
   text-align: center;
   position: relative;
 }
@@ -75,7 +73,7 @@ header#hero::after {
 }
 
 .hero-content h1 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'TOPOL BOLD', sans-serif;
   font-size: 3rem;
   margin: 0;
 }
@@ -124,13 +122,13 @@ section {
 }
 
 section h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'TOPOL BOLD', sans-serif;
   margin-bottom: 20px;
   color: var(--orange);
 }
 
 #next-event {
-  background: url('https://via.placeholder.com/1600x900/000000/ffffff') center/cover no-repeat;
+  background: url('src/media/logo-paper-background.png') center/cover no-repeat;
   position: relative;
   color: var(--text);
 }
@@ -247,6 +245,35 @@ footer {
   color: var(--orange);
   text-decoration: none;
   font-weight: bold;
+}
+
+/* audio visualizer */
+#hero .visualizer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#hero .visualizer .bar {
+  width: 8px;
+  background: var(--orange);
+  animation: bounce 1s infinite ease-in-out;
+}
+
+#hero .visualizer .bar:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+@keyframes bounce {
+  0% { height: 20%; }
+  50% { height: 100%; }
+  100% { height: 40%; }
 }
 
 @media (max-width: 600px) {
