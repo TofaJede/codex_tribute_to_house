@@ -361,6 +361,10 @@ footer {
 }
 
 #volume-control {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   opacity: 0.7;
   width: 150px;
   writing-mode: horizontal-tb;
