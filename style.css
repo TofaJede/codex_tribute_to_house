@@ -404,20 +404,23 @@ footer {
 .dj-train .track {
   display: inline-block;
   padding-left: 100%;
-  animation: dj-train-move 30s linear infinite;
+  /* Slower scroll for the DJ names */
+  animation: dj-train-move 45s linear infinite;
 }
 
 .dj-item {
   display: inline-flex;
   align-items: center;
-  margin-right: 40px;
+  /* Extra spacing between DJ entries */
+  margin-right: 60px;
 }
 
 .dj-item img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin-right: 8px;
+  /* Give the DJ name more breathing room */
+  margin-right: 12px;
 }
 
 .dj-train.on-beat .dj-item {
