@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     analyser.connect(audioCtx.destination);
 
     const djTrain = document.querySelector('#hero .dj-train');
+    const bars = document.querySelectorAll('#hero .visualizer .bar');
     let beatTimeout;
 
     const detectBeat = () => {
@@ -25,9 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (avg > 170) {
         if (djTrain) {
           djTrain.classList.add('on-beat');
-          clearTimeout(beatTimeout);
-          beatTimeout = setTimeout(() => djTrain.classList.remove('on-beat'), 100);
         }
+        bars.forEach(bar => bar.classList.add('on-beat'));
+        clearTimeout(beatTimeout);
+        beatTimeout = setTimeout(() => {
+          if (djTrain) djTrain.classList.remove('on-beat');
+          bars.forEach(bar => bar.classList.remove('on-beat'));
+        }, 100);
       }
       requestAnimationFrame(detectBeat);
     };
