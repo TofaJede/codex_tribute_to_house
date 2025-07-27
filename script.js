@@ -2,12 +2,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bg-audio');
   if (audio) {
     audio.volume = 0.3;
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    const audioCtx = new AudioCtx();
+    const source = audioCtx.createMediaElementSource(audio);
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 256;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    source.connect(analyser);
+    analyser.connect(audioCtx.destination);
+
+    const djTrain = document.querySelector('#hero .dj-train');
+    let beatTimeout;
+
+    const detectBeat = () => {
+      analyser.getByteFrequencyData(dataArray);
+      let sum = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        sum += dataArray[i];
+      }
+      const avg = sum / bufferLength;
+      if (avg > 170) {
+        if (djTrain) {
+          djTrain.classList.add('on-beat');
+          clearTimeout(beatTimeout);
+          beatTimeout = setTimeout(() => djTrain.classList.remove('on-beat'), 100);
+        }
+      }
+      requestAnimationFrame(detectBeat);
+    };
+
     const tryPlay = () => {
       audio.muted = false;
       audio.play().catch(() => {});
+      audioCtx.resume().catch(() => {});
     };
 
     tryPlay();
+    requestAnimationFrame(detectBeat);
 
     if (audio.paused) {
       const startPlayback = () => {
