@@ -35,7 +35,13 @@
       </div>
     </div>
     <div id="audio-player">
-      <audio id="bg-audio" src="src/player/track.wav" controls loop autoplay muted></audio>
+      <div class="custom-player">
+        <button id="play-btn" aria-label="Play"></button>
+        <div class="progress" id="progress">
+          <div class="progress-filled" id="progress-filled"></div>
+        </div>
+        <audio id="bg-audio" src="src/player/track.wav" loop muted></audio>
+      </div>
     </div>
     <div class="dj-train">
       <div class="track">
