@@ -444,3 +444,29 @@ footer {
     transition-duration: 0.001s !important;
   }
 }
+
+/* Social media embeds */
+#media .instagram-embeds,
+#media .soundcloud-embed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#media iframe {
+  border: none;
+  max-width: 100%;
+}
+
+#media .instagram-embeds iframe {
+  width: 100%;
+  max-width: 350px;
+  height: 430px;
+}
+
+#media .soundcloud-embed iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 166px;
+}
