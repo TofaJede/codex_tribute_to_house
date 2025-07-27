@@ -295,9 +295,6 @@ footer {
   nav ul {
     gap: 10px;
   }
-  #audio-player audio {
-    width: 90%;
-  }
   .dj-item {
     margin-right: 20px;
   }
@@ -307,17 +304,54 @@ footer {
   }
 }
 
-/* floating music player */
+/* custom music player */
 #audio-player {
   position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
 }
 
+#audio-player .custom-player {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 300px;
+}
+
+#audio-player button {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--orange);
+  color: var(--purple);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#audio-player button.playing {
+  background: var(--neon-purple);
+  color: var(--text);
+}
+
+#audio-player .progress {
+  height: 4px;
+  background: var(--text);
+  margin-top: 0.75rem;
+  position: relative;
+}
+
+#audio-player .progress-filled {
+  height: 100%;
+  width: 0;
+  background: var(--neon-purple);
+}
+
 #audio-player audio {
-  width: 350px;
+  display: none;
 }
 
 /* DJ train on hero */

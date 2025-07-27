@@ -43,8 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
       audioCtx.resume().catch(() => {});
     };
 
+    const playBtn = document.getElementById('play-btn');
+    const progressFilled = document.getElementById('progress-filled');
+
     tryPlay();
     requestAnimationFrame(detectBeat);
+
+    if (playBtn && progressFilled) {
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          tryPlay();
+          playBtn.classList.add('playing');
+        } else {
+          audio.pause();
+          playBtn.classList.remove('playing');
+        }
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressFilled.style.width = percent + '%';
+      });
+    }
 
     if (audio.paused) {
       const startPlayback = () => {
