@@ -284,3 +284,37 @@ footer {
     gap: 10px;
   }
 }
+
+/* floating music player */
+#audio-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+#audio-player audio {
+  width: 200px;
+}
+
+/* DJ name train */
+.dj-train {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 1rem;
+}
+
+.dj-train .track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: dj-train-move 15s linear infinite;
+}
+
+@keyframes dj-train-move {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
