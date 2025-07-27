@@ -45,26 +45,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const playBtn = document.getElementById('play-btn');
     const progressFilled = document.getElementById('progress-filled');
+    const vinyl = document.getElementById('vinyl');
 
     // attempt autoplay on load
     tryPlay();
     requestAnimationFrame(detectBeat);
 
+    const updateButton = () => {
+      if (audio.paused) {
+        playBtn.textContent = '\u25BA';
+        playBtn.classList.remove('playing');
+        if (vinyl) vinyl.classList.remove('spinning');
+      } else {
+        playBtn.textContent = '\u275A\u275A';
+        playBtn.classList.add('playing');
+        if (vinyl) vinyl.classList.add('spinning');
+      }
+    };
+
     if (playBtn && progressFilled) {
       playBtn.addEventListener('click', () => {
         if (audio.paused) {
           tryPlay();
-          playBtn.classList.add('playing');
         } else {
           audio.pause();
-          playBtn.classList.remove('playing');
         }
       });
 
+      audio.addEventListener('play', updateButton);
+      audio.addEventListener('pause', updateButton);
       audio.addEventListener('timeupdate', () => {
         const percent = (audio.currentTime / audio.duration) * 100;
         progressFilled.style.width = percent + '%';
       });
+      updateButton();
     }
 
     if (audio.paused) {
