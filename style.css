@@ -10,6 +10,7 @@
   --neon-purple: #7841c7;
   --orange: #eaa477;
   --text: #ffffff;
+  --vinyl-opacity: 0.4;
 }
 
 html {
@@ -319,9 +320,9 @@ footer {
 }
 
 #audio-player .vinyl {
-  width: 100%;
+  width: 200px;
   aspect-ratio: 1 / 1;
-  opacity: 0.4;
+  opacity: var(--vinyl-opacity);
   border-radius: 50%;
   background: radial-gradient(circle, #333 0%, #000 80%);
   position: relative;
@@ -336,7 +337,7 @@ footer {
   inset: 0;
   border-radius: 50%;
   background: repeating-radial-gradient(circle at center, #222 0, #222 2px, transparent 2px, transparent 4px);
-  opacity: 0.4;
+  opacity: var(--vinyl-opacity);
 }
 
 #audio-player .vinyl img {
