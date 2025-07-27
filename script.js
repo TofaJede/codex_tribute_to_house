@@ -55,10 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const vinyl = document.getElementById('vinyl');
+    const playBtn = document.getElementById('play-btn');
 
     // attempt autoplay on load
     tryPlay();
     requestAnimationFrame(detectBeat);
+
+    const updatePlayBtn = () => {
+      if (!playBtn) return;
+      if (audio.paused) {
+        playBtn.classList.remove('hidden');
+      } else {
+        playBtn.classList.add('hidden');
+      }
+    };
+    updatePlayBtn();
+    audio.addEventListener('play', updatePlayBtn);
+    audio.addEventListener('pause', updatePlayBtn);
 
     if (vinyl) {
       const updateVinyl = () => {
@@ -78,6 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       updateVinyl();
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          tryPlay();
+        } else {
+          audio.pause();
+        }
+      });
     }
 
     if (audio.paused) {

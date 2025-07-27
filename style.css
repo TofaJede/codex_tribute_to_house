@@ -364,6 +364,21 @@ footer {
   width: 100px;
 }
 
+#play-btn {
+  background: var(--orange);
+  color: var(--purple);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#play-btn.hidden {
+  display: none;
+}
+
 
 #audio-player audio {
   display: none;
