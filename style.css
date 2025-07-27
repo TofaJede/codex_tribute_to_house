@@ -10,7 +10,6 @@
   --neon-purple: #7841c7;
   --orange: #eaa477;
   --text: #ffffff;
-  --vinyl-opacity: 0.3;
 }
 
 html {
@@ -258,39 +257,6 @@ footer {
   font-weight: bold;
 }
 
-/* audio visualizer */
-#hero .visualizer {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-}
-
-#hero .visualizer .bar {
-  width: 8px;
-  background: var(--orange);
-  animation: bounce 1s infinite ease-in-out;
-}
-
-#hero .visualizer .bar.on-beat {
-  transform: scaleY(1.2);
-  background: var(--neon-purple);
-}
-
-#hero .visualizer .bar:nth-child(odd) {
-  animation-delay: 0.5s;
-}
-
-@keyframes bounce {
-  0% { height: 20%; }
-  50% { height: 100%; }
-  100% { height: 40%; }
-}
 
 @media (max-width: 600px) {
   .hero-content h1 {
@@ -308,71 +274,6 @@ footer {
   }
 }
 
-/* custom music player */
-#audio-player {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  z-index: 1;
-}
-
-#audio-player .vinyl {
-  width: 30%;
-  aspect-ratio: 1 / 1;
-  opacity: var(--vinyl-opacity);
-  border-radius: 50%;
-  background: radial-gradient(circle, #333 0%, #000 80%);
-  position: relative;
-  overflow: hidden;
-  animation: spin 4s linear infinite;
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-#audio-player .vinyl::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: repeating-radial-gradient(circle at center, #222 0, #222 2px, transparent 2px, transparent 4px);
-  opacity: var(--vinyl-opacity);
-}
-
-#audio-player .vinyl img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 40%;
-  border-radius: 50%;
-}
-
-#audio-player .vinyl.spinning {
-  animation-play-state: running;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-#volume-control {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: center;
-  opacity: 0.7;
-  width: 150px;
-}
-
-#audio-player audio {
-  display: none;
-}
 
 /* DJ train on hero */
 #hero .dj-train {
